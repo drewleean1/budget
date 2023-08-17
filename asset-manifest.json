@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/budget_frontend/static/css/main.0219c8b4.css",
+    "main.js": "/budget_frontend/static/js/main.ada3be78.js",
+    "static/media/snowy-background.jpg": "/budget_frontend/static/media/snowy-background.3892d23ae798f66c3229.jpg",
+    "index.html": "/budget_frontend/index.html",
+    "main.0219c8b4.css.map": "/budget_frontend/static/css/main.0219c8b4.css.map",
+    "main.ada3be78.js.map": "/budget_frontend/static/js/main.ada3be78.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0219c8b4.css",
+    "static/js/main.ada3be78.js"
+  ]
+}
