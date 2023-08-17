@@ -1,0 +1,95 @@
+import {React, useState} from 'react'; 
+import {useNavigate} from 'react-router-dom';
+
+function AddExpensePage () {
+    const [date, setDate]           = useState(''); 
+    const [item, setItem]           = useState('');
+    const [amount, setAmount]       = useState(''); 
+    const [category, setCategory]   = useState(''); 
+    const [method, setMethod]       = useState('');
+
+    const pivot = useNavigate();
+    
+    const addExpense = async() => {
+        const newExpense = {date, item, amount, category, method}; 
+        const response = await fetch('/expenses', {
+            method: 'post', 
+            body: JSON.stringify(newExpense), 
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+        if (response.status === 201) {
+            alert('Expense successfully logged');
+            pivot("/ExpensePage");
+        } 
+        else {
+            alert(`We were unable to log your expense: status code = ${response.status}`); 
+            pivot("/ExpensePage")
+        }
+    }
+
+    
+    return (
+        <>
+        <article> 
+            <h2>You can add an expense with the form below</h2>
+            <form onSubmit={(e) => {e.preventDefault();}}>
+                <fieldset> 
+                    <label htmlFor="date">Date</label>
+                    <input
+                        type="date"
+                        placeholder="Date"
+                        value={date}
+                        onChange={e =>setDate(e.target.value)}
+                        id = "date"/>
+
+                    
+                    <label htmlFor="item">Expense Name</label>
+                    <input
+                        type="text"
+                        placeholder="Rent"
+                        value={item}
+                        onChange={e =>setItem(e.target.value)}
+                        id = "item"/>
+
+                    <label htmlFor="amount">Amount</label>
+                    <input
+                        type="number"
+                        placeholder="$800"
+                        value={amount}
+                        onChange={e =>setAmount(e.target.value)}
+                        id = "amount"/>
+
+                    <label htmlFor="category">Category</label>
+                    <input
+                        type="text"
+                        placeholder="Housing"
+                        value={category}
+                        onChange={e =>setCategory(e.target.value)}
+                        id = "category"/>
+
+                    <label htmlFor="method">Payment Method</label>
+                    <input
+                        type="text"
+                        placeholder="Check"
+                        value={method}
+                        onChange={e =>setMethod(e.target.value)}
+                        id = "method"/>
+
+                    <label htmlFor="submit">
+                    <button
+                        type="submit"
+                        onClick={addExpense}
+                        id="submit"
+                    >Add</button></label>
+
+                </fieldset>
+            </form>
+        </article>
+        </>
+    )
+
+}
+
+export default AddExpensePage;

@@ -1,0 +1,313 @@
+
+
+/*   ----- Imports  -----  */
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital@1&family=Source+Sans+Pro&display=swap'); /*Raleway, Source Sans Pro;*/
+@import "~react-image-gallery/styles/css/image-gallery.css";
+/*   ----- Variables  -----  */
+:root {
+    --darkskyblue: hsl(208,95.8%,28%);
+    --medskyblue: hsl(208,96.4%,33.1%);
+    --icyskyblue: hsl(207.8,87.2%,60.2%); 
+    --paleyellow: hsl(58, 100%, 87%); 
+    --transparentsalmon: hex(#FF573300);
+    --palegreen:hsl(105, 56%, 72%);
+    --paleorange:hex(#FFD36F); 
+    --custom-embellishment-name:;
+  }
+  
+  /*  ----- Viewport ----- elements inherited by all remaining elements ----- */
+
+  html {
+    margin: 0px;
+    min-height: 100%;
+
+  }
+  body {       /* Can alternatively define in html {} or :root {} */
+    background-color:;
+    background-image: url(images/snowy-background.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: top left;
+    background-repeat: no-repeat;
+    color: var(--paleyellow);
+    font-family:Source Sans Pro;
+    margin:0 auto;
+    padding:1%;
+    min-height:100%
+  }
+  
+  /*  ----- Page layout blocks -----  */
+  header {
+    font-family: Raleway;
+    color:var(--paleyellow);
+    background-color: var(--icyskyblue);
+    text-align: center;
+    padding:0%;
+    margin: 0%;
+    border: 1px solid var(--icyskyblue);
+
+  }
+  main {
+  }
+  section {
+    background-color: var(--palegreen);
+    margin: 2%;
+    padding-top: 1%;
+    padding-left: 2%;
+    padding-right: 2%; 
+    padding-bottom: 2%;
+    border: 1px solid var(--icyskyblue);
+
+  }
+    article {
+        background-color: var(--darkskyblue);
+        margin: 2%;
+        margin-right:4%;
+        padding-top: 1%;
+        padding-left: 2%;
+        padding-right: 2%; 
+        padding-bottom: 2%;    
+        border: 1px solid var(--icyskyblue);
+        
+    }
+
+      #topic1 {}
+      #topic2 {}
+  div {}
+  aside {}
+  footer {
+    font-family: Raleway;
+    color:var(--paleyellow);
+    background-color: var(--icyskyblue);
+    text-align: center;
+    padding:1%;
+    border: 1px solid var(--icyskyblue);
+  }
+  
+  /* ----- Anchors ----- Text links */
+  a {}
+  a:link {color:var(--palegreen)}
+  a:hover {}
+  a:active {}
+  a:visited {}
+  
+  /*  ----- Navigation ----- Override text links for navigation only.  */
+  nav {
+    margin-top:2%;
+    padding: 2.5%;
+    text-align: center;
+    text-decoration: none;
+    font-family: Raleway;
+  }
+  
+  nav a {
+    background-color: var(--paleyellow);
+    font-weight: bold;
+    color: var(--darkskyblue); 
+    border: 2 px, var(--paleyellow);
+    border-radius: 5 px;
+    padding: 2.5%;
+    margin-left: 2%;
+}
+
+nav a:hover {
+    background-color: var(--darkskyblue);
+    font-weight: bold; 
+    color: var(--paleyellow); 
+}
+
+  
+  /*  -----  Typography  ----- */
+  p {
+    padding:1%;
+  }
+  br {}
+  ol, ul, dl {}
+  li {}
+  dt {    
+    padding:1%;
+    }
+  dd {}
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: Raleway;
+    color:var(--paleyellow);
+    padding:1%;
+  } 
+  h1 {
+    font-size:250%;
+    margin: 0%;
+  }
+  h2 {    
+    font-size:200%;
+    color: var(--darkskyblue);
+  }
+  h3 {
+    font-size:150%;
+    color: var(--palegreen);
+    text-align: center;
+  }
+  h4 {
+    font-size:150%;
+    color: var(--darkskyblue)
+  }
+
+  
+  /*  ----- Table ----- */
+  table {
+    border-collapse:collapse;
+    width:100%;
+    margin-bottom: 10%;
+    font-size: 125%;
+  }
+  tr th, 
+  tr td {
+    border:5px solid var(--palegreen);
+    padding:1%;
+    text-align: center;
+  }
+  
+  caption {
+    color:var(--paleyellow);
+  }
+  thead {}
+  tbody {}
+  tfoot {}
+  tr {}
+    tr:nth-child(even) {
+     /* background-color:var(--icyskyblue)*/
+     background-color:royalblue;
+    }
+      th {}
+  td {}
+    td:nth-child(1) {}
+  colgroup {}
+  data {}
+  datalist {}
+  
+  
+  /*  ----- Form ----- */
+  form {}
+
+
+
+  fieldset {
+    border: 1 px solid var(--icyskyblue);    
+    margin-top: 2.5%; 
+    padding: 2%;  
+    }
+    legend {
+      color: var(--palegreen);
+      font-size:150%;
+    }  
+    label {
+        display:block;
+
+
+    }
+    input, button, textarea, select {
+      font-size:110%;
+      padding:1%;
+      font-family:inherit;
+    } 
+    button {
+      display: inline-block;
+      position: relative;
+      margin: 1%;
+      background-color: var(--paleyellow);
+      
+    }
+    input {
+      display: inline-block;
+      position: relative;
+      
+    }
+    label {
+      display: flex;
+
+    }
+
+    *:required {
+        border:2px solid green;
+    }
+    label.required:after{
+      color: var(--darkskyblue);
+    } 
+
+    input:invalid {
+      border:3px solid crimson;
+    }
+    input:valid {
+      border:2px solid green;
+    }
+    input::placeholder {
+      color:darkgray.
+    }
+    
+    .AddExpenseRow {  
+      display: flex;
+      flex-flow: row;
+      align-items: center;
+    }
+    
+    .AddExpenseRow label {
+      margin: 5px 10px 5px 0;
+    }
+    
+    .AddExpenseRow input {
+      vertical-align: middle;
+      margin: 5px 10px 5px 0;
+      padding: 10px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+    }
+
+
+    .AddExpenseRow button {
+      padding: 10px 20px;
+      background-color: dodgerblue;
+      border: 1px solid #ddd;
+      color: white;
+      cursor: pointer;
+    }
+    
+    .AddExpenseRow button:hover {
+      background-color: royalblue;
+    }
+
+  
+  .ProductQuantity{
+    padding: 1%;
+    margin: 2%;
+  }
+  
+  /*  ----- Classes for alignment, positioning, widths, grids, embellishments, and animation ----- */
+  .image-gallery-image{
+    margin-top: 4%;
+  }
+  .image-gallery-description{
+    text-align: center;
+  }
+
+  .upIcon{
+    font-size: 30px;
+  }
+
+  .downIcon{
+    font-size: 30px;
+  }
+
+ 
+  
+  @keyframes App-logo {} 
+  
+  /*   ===== TABLET  media query overrides mobile styles ===== */
+  @media all and (min-width: 600px) {}
+  
+  /*   ===== DESKTOP  media query overrides mobile and tablet styles ===== */
+  @media all and (min-width: 1080px) {}
+  
+  /*   ===== PRINT  media query overrides previous styles =====  */
+  @media print {}
+  
