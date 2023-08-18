@@ -27,7 +27,7 @@ const ExpensePage = ({setCategory, setExpense, setCMonth, setCYear, setDateStart
     const [endDate, setEndDate] = useState("");
 
     const loadExpenses = async () => {
-        const response = await fetch(`/expenses/month/${month}/year/${year}`);
+        const response = await fetch(`https://git.heroku.com/budget-drewleean.git/expenses/month/${month}/year/${year}`);
         const expenses = await response.json(); 
         setExpenses(expenses);
     }
