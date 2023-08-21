@@ -12,8 +12,8 @@ function EditExpensePage ({givenExpense}) {
     const pivot = useNavigate();
     
     const editExpense = async() => {
-        const response = await fetch(`/expenses/${givenExpense._id}`, {
-            method: 'PUT', 
+        const response = await fetch(`https://budget-drewleean-80248645fdf0.herokuapp.com/expenses/${givenExpense._id}`, {
+            method: 'put', 
             body: JSON.stringify({
                 date: date, 
                 item: item, 
