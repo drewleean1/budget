@@ -33,7 +33,7 @@ function App() {
         <main>
           <section className="App-article">
             <Routes>
-                <Route path="/budget" element={<HomePage />} />
+                <Route path="/" element={<HomePage />} />
                 <Route path="/StaffPage" element={<StaffPage/>}/>
                 <Route path="/ExpensePage" element={<ExpensePage setExpense={setExpenseToEdit} setCategory ={setCategoryToSearch} setCMonth = {setCMonth} setCYear = {setCYear} setDateStart = {setSDate} setDateEnd={setEDate}/>}/>
                 <Route path="/AddExpensePage" element={<AddExpensePage/>}/>
