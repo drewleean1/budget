@@ -9,26 +9,28 @@ const CategoryPage = ({setCMonth, setCYear, givenMonth, givenYear}) => {
     const months = [ '',"January", "February", "March", "April", "May", "June", 
            "July", "August", "September", "October", "November", "December" ];
 
-    let currentMonth = months[givenMonth];
+    
     
     const pivot = useNavigate();
 
     const [expenses, setExpenses] = useState([]); 
-    const [month, setMonth] = useState("");
-    const [year, setYear] = useState("");
+    const [month, setMonth] = useState(givenMonth);
+    const [year, setYear] = useState(givenYear);
+
+    let currentMonth = months[month];
 
     const loadExpenses = async () => {
-        const response = await fetch(`/expenses/month/${givenMonth}/year/${givenYear}`);
+        const response = await fetch(`https://budget-drewleean-80248645fdf0.herokuapp.com/expenses/month/${month}/year/${year}`);
         const expenses = await response.json(); 
         setExpenses(expenses);
     }
 
     const onMonthYear = async (cMonth, cYear) => {
-        console.log('here', month, year);
-        setCMonth(month); 
-        setCYear(year); 
-        window.location.reload();
-
+        //setCMonth(month); 
+        //setCYear(year); 
+        //window.location.reload();
+        loadExpenses();
+        //pivot("/CategoryPage");
     }
 
     useEffect(() => {
@@ -64,11 +66,11 @@ const CategoryPage = ({setCMonth, setCYear, givenMonth, givenYear}) => {
                 </fieldset>
             </form>
                 
-            <h3>{currentMonth} {givenYear}</h3>
+            <h3>{currentMonth} {year}</h3>
                 <CategoryLog
                     expenses = {expenses}
-                    givenMonth = {givenMonth}
-                    givenYear = {givenYear}/>
+                    givenMonth = {month}
+                    givenYear = {year}/>
             </article>
         </>
     );

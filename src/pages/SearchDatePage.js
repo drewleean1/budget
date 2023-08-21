@@ -11,7 +11,7 @@ const SearchDatePage = ({setExpense, startDate, endDate}) => {
     const [expenses, setExpenses] = useState([]); 
 
     const loadExpenses = async () => {
-        const response = await fetch(`/expenses/sDate/${startDate}/eDate/${endDate}`);
+        const response = await fetch(`https://budget-drewleean-80248645fdf0.herokuapp.com/expenses/sDate/${startDate}/eDate/${endDate}`);
         const expenses = await response.json(); 
         setExpenses(expenses);
     }
@@ -22,7 +22,7 @@ const SearchDatePage = ({setExpense, startDate, endDate}) => {
     }
 
     const onDeleteExpense = async _id => {
-        const response = await fetch(`/expenses/${_id}`, { method: 'delete' });
+        const response = await fetch(`https://budget-drewleean-80248645fdf0.herokuapp.com/expenses/${_id}`, { method: 'delete' });
         if (response.status === 204) {
             const getResponse = await fetch('/expenses'); 
             const expenses = await getResponse.json();

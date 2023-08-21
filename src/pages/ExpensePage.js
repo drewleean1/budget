@@ -50,15 +50,18 @@ const ExpensePage = ({setCategory, setExpense, setCMonth, setCYear, setDateStart
     }
 
     const onDeleteExpense = async _id => {
-        const response = await fetch(`/expenses/${_id}`, { method: 'delete' });
-        if (response.status === 204) {
-            const getResponse = await fetch('/expenses'); 
-            const expenses = await getResponse.json();
-            setExpenses(expenses);
-        }
-        else {
-            console.error(`Unable to delete expense with _id = ${_id}, status code = ${response.status}`)
-        }
+        
+        if (window.confirm("Are you sure you want to delete this expense?")) {
+            const response = await fetch(`https://budget-drewleean-80248645fdf0.herokuapp.com/expenses/${_id}`, { method: 'delete' });
+            if (response.status === 204) {
+                const getResponse = await fetch('https://budget-drewleean-80248645fdf0.herokuapp.com/expenses'); 
+                const expenses = await getResponse.json();
+                setExpenses(expenses);
+            }
+            else {
+                console.error(`Unable to delete expense with _id = ${_id}, status code = ${response.status}`)
+            }}
+        else {}
     }
 
     useEffect(() => {

@@ -14,7 +14,7 @@ function CategoryLog({expenses, givenMonth, givenYear}) {
     
     listOfCategories.sort()
 
-    console.log(givenMonth, givenYear);
+    console.log(expenses, givenMonth, givenYear, listOfCategories);
 
     return (
         

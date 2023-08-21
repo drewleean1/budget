@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 
 import Nav from './components/Nav.js';
 import HomePage from './pages/HomePage.js';
@@ -26,7 +26,7 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
+      <HashRouter>
 
         <Nav />
 
@@ -50,7 +50,7 @@ function App() {
           <p><cite>&copy; Andrew Lee 2023</cite></p>
         </footer>
         
-        </BrowserRouter>
+        </HashRouter>
       </div>
     );
   }

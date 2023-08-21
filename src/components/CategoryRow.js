@@ -9,7 +9,7 @@ function CategoryRow ({givenCategory, givenMonth, givenYear, setCategory}) {
     const pivot = useNavigate();
 
     const loadExpenses = async () => {
-        const response = await fetch(`/expenses/category/${givenCategory}/month/${givenMonth}/year/${givenYear}`);
+        const response = await fetch(`https://budget-drewleean-80248645fdf0.herokuapp.com/expenses/category/${givenCategory}/month/${givenMonth}/year/${givenYear}`);
         const expenses = await response.json(); 
         setExpenses(expenses);
     }

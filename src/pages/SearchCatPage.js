@@ -15,7 +15,7 @@ const SearchCatPage = ({setExpense}) => {
 
     const loadExpenses = async () => {
         //const response = await fetch(`/expenses/category/${givenCategory}`);
-        const response = await fetch(`/expenses/category/${givenCategory}/month/7/year/2023`);
+        const response = await fetch(`https://budget-drewleean-80248645fdf0.herokuapp.com/expenses/category/${givenCategory}/month/7/year/2023`);
         const expenses = await response.json(); 
         setExpenses(expenses);
     }
@@ -26,9 +26,9 @@ const SearchCatPage = ({setExpense}) => {
     }
 
     const onDeleteExpense = async _id => {
-        const response = await fetch(`/expenses/${_id}`, { method: 'delete' });
+        const response = await fetch(`https://budget-drewleean-80248645fdf0.herokuapp.com/expenses/${_id}`, { method: 'delete' });
         if (response.status === 204) {
-            const getResponse = await fetch('/expenses'); 
+            const getResponse = await fetch('https://budget-drewleean-80248645fdf0.herokuapp.com/expenses'); 
             const expenses = await getResponse.json();
             setExpenses(expenses);
         }
