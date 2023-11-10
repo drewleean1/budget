@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 function ExpenseNav() {
   return (
-    <nav className="ExpenseNav">
+    <nav className = 'ExpenseNav'>
         <Link to="../ExpensePage">Expense</Link>
         <Link to="../BudgetPage">Budget</Link>
         <Link to="../CategoryPage">Categories</Link>

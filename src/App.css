@@ -19,13 +19,13 @@
   /*  ----- Viewport ----- elements inherited by all remaining elements ----- */
 
   html {
-    margin: 0px;
+    margin: 0;
     min-height: 100%;
 
   }
   body {       /* Can alternatively define in html {} or :root {} */
-    background-color:;
-    background-image: url(images/snowy-background.jpg);
+    background-color:var(--darkskyblue);
+    /*background-image: url(images/snowy-background.jpg);*/
     background-size: cover;
     background-attachment: fixed;
     background-position: top left;
@@ -33,7 +33,7 @@
     color: var(--paleyellow);
     font-family:Source Sans Pro;
     margin:0 auto;
-    padding:1%;
+    padding:0;
     min-height:100%
   }
   
@@ -41,12 +41,12 @@
   header {
     font-family: Raleway;
     color:var(--paleyellow);
-    background-color: var(--icyskyblue);
+    background-color: whitesmoke;
     text-align: center;
-    padding:0%;
-    margin: 0%;
-    border: 1px solid var(--icyskyblue);
-
+    padding:0;
+    margin: 0;
+    border: 1px solid whitesmoke;
+    height: 75px;
   }
   main {
   }
@@ -68,7 +68,6 @@
         padding-left: 2%;
         padding-right: 2%; 
         padding-bottom: 2%;    
-        border: 1px solid var(--icyskyblue);
         
     }
 
@@ -78,9 +77,9 @@
   aside {}
   footer {
     font-family: Raleway;
-    color:var(--paleyellow);
-    background-color: var(--icyskyblue);
-    text-align: center;
+    color:var(--darkskyblue);
+    background-color: whitesmoke;
+    text-align: left;
     padding:1%;
     border: 1px solid var(--icyskyblue);
   }
@@ -95,26 +94,39 @@
   /*  ----- Navigation ----- Override text links for navigation only.  */
   nav {
     margin-top:2%;
-    padding: 2.5%;
-    text-align: center;
+    margin-bottom:2%;
+    padding:;
+    text-align: left;
     text-decoration: none;
     font-family: Raleway;
   }
   
   nav a {
-    background-color: var(--paleyellow);
+    /*background-color: var(--paleyellow);*/
     font-weight: bold;
     color: var(--darkskyblue); 
     border: 2 px, var(--paleyellow);
+    
+    border-radius: 25px;
+    /*background: #73AD21;*/
+    padding: 20px;
+    width: 200px;
+    height: 150px;
+    
     border-radius: 5 px;
-    padding: 2.5%;
-    margin-left: 2%;
+    padding: 1%;
+    margin-left: 1%;
+    
 }
 
 nav a:hover {
     background-color: var(--darkskyblue);
     font-weight: bold; 
     color: var(--paleyellow); 
+}
+
+.ExpenseNav a{
+  color: whitesmoke;
 }
 
   
@@ -141,7 +153,8 @@ nav a:hover {
   }
   h2 {    
     font-size:200%;
-    color: var(--darkskyblue);
+    color: whitesmoke;
+    margin-left: 1%;
   }
   h3 {
     font-size:150%;

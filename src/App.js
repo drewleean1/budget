@@ -27,11 +27,10 @@ function App() {
   return (
     <div className="App">
       <HashRouter>
-
-        <Nav />
+        <header><Nav /></header>
+        
 
         <main>
-          <section className="App-article">
             <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/StaffPage" element={<StaffPage/>}/>
@@ -43,7 +42,6 @@ function App() {
                 <Route path="/CategoryPage" element = {<CategoryPage setExpense={setExpenseToEdit} setCategory ={setCategoryToSearch} givenMonth ={cMonth} givenYear={cYear} setCMonth = {setCMonth} setCYear = {setCYear}/>}/>
                 <Route path="/CategoryRow" element ={<CategoryRow setCategory= {setCategoryToSearch} />}/>
             </Routes>
-          </section>
         </main>
         
         <footer>
