@@ -1,17 +1,27 @@
 import {React, useState, useEffect} from 'react'; 
-import {useNavigate} from 'react-router-dom';
+import {useNavigate, useParams} from 'react-router-dom';
 import CategoryLog from '../components/CategoryLog';
-
+import MonthYear from '../components/MonthYear';
+import ExpenseNav from '../components/ExpenseNav';
 import ExpenseLog from '../components/ExpenseLog';
 
-const SearchDatePage = ({setExpense, startDate, endDate}) => {
+const SearchMonth = ({setExpense, searchMonth, searchYear}) => {
+
+    const months = [ '',"January", "February", "March", "April", "May", "June", 
+           "July", "August", "September", "October", "November", "December" ];
+
 
     const pivot = useNavigate();
 
     const [expenses, setExpenses] = useState([]); 
 
+    const{month, year} = useParams();
+
+    let headerMonth = months[month];
+
+
     const loadExpenses = async () => {
-        const response = await fetch(`https://budget-drewleean-80248645fdf0.herokuapp.com/expenses/sDate/${startDate}/eDate/${endDate}`);
+        const response = await fetch(`https://budget-drewleean-80248645fdf0.herokuapp.com/expenses/month/${month}/year/${year}`);
         const expenses = await response.json(); 
         setExpenses(expenses);
     }
@@ -40,7 +50,12 @@ const SearchDatePage = ({setExpense, startDate, endDate}) => {
 
     return (
         <>
+        <ExpenseNav/>
         <article> 
+        <div className = "ExpenseHeader">
+            <h3>{headerMonth} {year}</h3>
+            <MonthYear />
+        </div>
         <ExpenseLog 
                 expenses={expenses} 
                 onEdit={onEditExpense} 
@@ -52,4 +67,4 @@ const SearchDatePage = ({setExpense, startDate, endDate}) => {
 
 }
 
-export default SearchDatePage;
+export default SearchMonth;

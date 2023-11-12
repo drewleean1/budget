@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
+import {AiOutlineCalendar} from 'react-icons/ai';
 
+import MonthYear from "../components/MonthYear";
 import ExpenseLog from '../components/ExpenseLog';
 import AddExpenseRow from '../components/AddExpenseRow';
 import CategoryLog from "../components/CategoryLog";
 import ExpenseNav from "../components/ExpenseNav";
 
 
-const ExpensePage = ({setCategory, setExpense, setCMonth, setCYear, setDateStart, setDateEnd}) => {
+const ExpensePage = ({setCategory, setExpense, setCMonth, setCYear}) => {
 
     let today = new Date(); 
     let day = today.getDate();
@@ -25,6 +27,7 @@ const ExpensePage = ({setCategory, setExpense, setCMonth, setCYear, setDateStart
     const [categories, setCategories] = useState("");
     const [startDate, setStartDate] = useState("");
     const [endDate, setEndDate] = useState("");
+    const [date, setDate] = useState();
 
     const loadExpenses = async () => {
         console.log(month, year)
@@ -41,12 +44,6 @@ const ExpensePage = ({setCategory, setExpense, setCMonth, setCYear, setDateStart
     const onSearchCategory = async cat => {
         setCategory(categories);
         pivot("/SearchCatPage");
-    }
-
-    const onSearchDate = async cat => {
-        setDateStart(startDate); 
-        setDateEnd(endDate); 
-        pivot("/SearchDatePage");
     }
 
     const onDeleteExpense = async _id => {
@@ -76,35 +73,16 @@ const ExpensePage = ({setCategory, setExpense, setCMonth, setCYear, setDateStart
             <ExpenseNav/>
 
             <article>
-            <h3>Add an expense:</h3>
-            
-            <AddExpenseRow/>
+            <div className="ExpenseHeader">
+                <h3>Add an expense:</h3>
+                <AddExpenseRow/>
+            </div>
 
+            <div className = "ExpenseHeader">
+                <h3>{currentMonth} {year}</h3>
+                <MonthYear />
+            </div>
 
-
-            <form onSubmit={(e) => {e.preventDefault();}}>
-                <fieldset>
-                <label htmlFor="searchDate">Date</label>
-                <input
-                        type="date"
-                        placeholder="Start Date"
-                        value={startDate}
-                        onChange={e =>setStartDate(e.target.value)}
-                        id = "startDate"/>
-                <input
-                        type="date"
-                        placeholder="End Date"
-                        value={endDate}
-                        onChange={e =>setEndDate(e.target.value)}
-                        id = "endDate"/>
-                <button
-                        type="button"
-                        onClick={onSearchDate}
-                        id="search"
-                    >Search</button>
-                </fieldset>
-            </form>
-            <h3>{currentMonth} {year}</h3>
             <ExpenseLog 
                 expenses={expenses} 
                 onEdit={onEditExpense} 

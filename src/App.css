@@ -159,7 +159,7 @@ nav a:hover {
   h3 {
     font-size:150%;
     color: var(--palegreen);
-    text-align: center;
+    text-align: left;
   }
   h4 {
     font-size:150%;
@@ -258,6 +258,17 @@ nav a:hover {
       color:darkgray.
     }
     
+    .ExpenseHeader {
+      display:flex;
+      justify-content: space-between;
+    }
+
+    .CustomDate {
+      display: flex;
+      flex-flow:row; 
+      align-items: center; 
+    }
+    
     .AddExpenseRow {  
       display: flex;
       flex-flow: row;
@@ -310,7 +321,12 @@ nav a:hover {
   .downIcon{
     font-size: 30px;
   }
-
+   
+  .CalendarIcon {
+    font-size: 30px;
+    margin-left: 10px;
+    text-align: center;
+  }
  
   
   @keyframes App-logo {} 

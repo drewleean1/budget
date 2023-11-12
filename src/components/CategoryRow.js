@@ -15,7 +15,7 @@ function CategoryRow ({givenCategory, givenMonth, givenYear, setCategory}) {
     }
 
     const SearchCategory = async() => {
-        setCategory(givenCategory)
+        setCategory(givenCategory);
         pivot('/SearchCatPage');
     }
 
