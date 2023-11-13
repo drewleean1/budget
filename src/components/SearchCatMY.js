@@ -1,26 +1,30 @@
 import { React, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 
-const MonthYear = () => {
+const SearchCatMY = () => {
 
   let today = new Date();
 
   const pivot = useNavigate();
 
+  const [category, setCategory] = useState("");
   const [month, setMonth] = useState(today.getMonth());
   const [year, setYear] = useState(today.getFullYear());
 
-  console.log(year);
-
   const onSearchDate = async () => {
-    console.log(month, year);
-    pivot(`/SearchMonth/${month}/${year}`);
+    pivot(`/SearchCatPage/${month}/${year}/${category}`);
     window.location.reload();
     }
 
   return (
     <>
       <form className="CustomDate">
+      <input
+        type="text"
+        placeholder="Groceries"
+        value={category}
+        onChange={e =>setCategory(e.target.value)}
+        id = "category"/>
       <label>
         <select className="MonthSelect" onChange={e =>setMonth(e.target.value)}>
             <option value="1">January</option>
@@ -54,4 +58,4 @@ const MonthYear = () => {
   );
 }
 
-export default MonthYear;
+export default SearchCatMY;

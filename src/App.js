@@ -18,8 +18,6 @@ function App() {
 
   const [expense, setExpenseToEdit] = useState([])
   const [cat, setCategoryToSearch] = useState("");
-  const [cMonth, setCMonth] = useState(""); 
-  const [cYear, setCYear] = useState("");
 
   return (
     <div className="App">
@@ -30,11 +28,11 @@ function App() {
         <main>
             <Routes>
                 <Route path="/" element={<HomePage />} />
-                <Route path="/ExpensePage" element={<ExpensePage setExpense={setExpenseToEdit} setCategory ={setCategoryToSearch} setCMonth = {setCMonth} setCYear = {setCYear}/>}/>
+                <Route path="/ExpensePage" element={<ExpensePage setExpense={setExpenseToEdit}/>}/>
                 <Route path="/AddExpensePage" element={<AddExpensePage/>}/>
                 <Route path="/EditExpensePage" element={<EditExpensePage givenExpense = {expense}/>}/>
                 <Route path="/SearchCatPage" element = {<SearchCatPage setExpense={setExpenseToEdit} givenCategory = {cat} />}/>
-                <Route path="/CategoryPage" element = {<CategoryPage setExpense={setExpenseToEdit} setCategory ={setCategoryToSearch} givenMonth ={cMonth} givenYear={cYear} setCMonth = {setCMonth} setCYear = {setCYear}/>}/>
+                <Route path="/CategoryPage/:month/:year" element = {<CategoryPage setExpense={setExpenseToEdit} />}/>
                 <Route path="/CategoryRow" element ={<CategoryRow setCategory= {setCategoryToSearch} />}/>
                 <Route path="/SearchMonth/:month/:year" element={<SearchMonth setExpense={setExpenseToEdit}/>}/>
             </Routes>

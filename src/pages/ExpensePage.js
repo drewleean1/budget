@@ -1,18 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
-import {AiOutlineCalendar} from 'react-icons/ai';
 
 import MonthYear from "../components/MonthYear";
 import ExpenseLog from '../components/ExpenseLog';
 import AddExpenseRow from '../components/AddExpenseRow';
-import CategoryLog from "../components/CategoryLog";
 import ExpenseNav from "../components/ExpenseNav";
 
 
-const ExpensePage = ({setCategory, setExpense, setCMonth, setCYear}) => {
+const ExpensePage = ({setExpense}) => {
 
     let today = new Date(); 
-    let day = today.getDate();
     let month = today.getMonth()+1; 
     let year = today.getFullYear();
 
@@ -24,10 +21,6 @@ const ExpensePage = ({setCategory, setExpense, setCMonth, setCYear}) => {
     const pivot = useNavigate();
 
     const [expenses, setExpenses] = useState([]); 
-    const [categories, setCategories] = useState("");
-    const [startDate, setStartDate] = useState("");
-    const [endDate, setEndDate] = useState("");
-    const [date, setDate] = useState();
 
     const loadExpenses = async () => {
         console.log(month, year)
@@ -41,13 +34,7 @@ const ExpensePage = ({setCategory, setExpense, setCMonth, setCYear}) => {
         pivot("/EditExpensePage");
     }
 
-    const onSearchCategory = async cat => {
-        setCategory(categories);
-        pivot("/SearchCatPage");
-    }
-
     const onDeleteExpense = async _id => {
-        
         if (window.confirm("Are you sure you want to delete this expense?")) {
             const response = await fetch(`https://budget-drewleean-80248645fdf0.herokuapp.com/expenses/${_id}`, { method: 'delete' });
             if (response.status === 204) {
@@ -63,9 +50,6 @@ const ExpensePage = ({setCategory, setExpense, setCMonth, setCYear}) => {
 
     useEffect(() => {
         loadExpenses();
-        setCMonth(month);
-        setCYear(year);
-        console.log(month, year)
     }, []);
 
     return (

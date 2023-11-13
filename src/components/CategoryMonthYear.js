@@ -1,7 +1,7 @@
 import { React, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 
-const MonthYear = () => {
+const CategoryMonthYear = () => {
 
   let today = new Date();
 
@@ -14,7 +14,7 @@ const MonthYear = () => {
 
   const onSearchDate = async () => {
     console.log(month, year);
-    pivot(`/SearchMonth/${month}/${year}`);
+    pivot(`/CategoryPage/${month}/${year}`);
     window.location.reload();
     }
 
@@ -54,4 +54,4 @@ const MonthYear = () => {
   );
 }
 
-export default MonthYear;
+export default CategoryMonthYear;

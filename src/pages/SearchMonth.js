@@ -1,11 +1,10 @@
 import {React, useState, useEffect} from 'react'; 
 import {useNavigate, useParams} from 'react-router-dom';
-import CategoryLog from '../components/CategoryLog';
 import MonthYear from '../components/MonthYear';
 import ExpenseNav from '../components/ExpenseNav';
 import ExpenseLog from '../components/ExpenseLog';
 
-const SearchMonth = ({setExpense, searchMonth, searchYear}) => {
+const SearchMonth = ({setExpense}) => {
 
     const months = [ '',"January", "February", "March", "April", "May", "June", 
            "July", "August", "September", "October", "November", "December" ];
@@ -18,7 +17,6 @@ const SearchMonth = ({setExpense, searchMonth, searchYear}) => {
     const{month, year} = useParams();
 
     let headerMonth = months[month];
-
 
     const loadExpenses = async () => {
         const response = await fetch(`https://budget-drewleean-80248645fdf0.herokuapp.com/expenses/month/${month}/year/${year}`);

@@ -187,14 +187,17 @@ nav a:hover {
   thead {}
   tbody {}
   tfoot {}
-  tr {}
-    tr:nth-child(even) {
-     /* background-color:var(--icyskyblue)*/
-     background-color:royalblue;
-    }
-      th {}
+  tr {
+
+  }
+  tr:nth-child(even) {
+    /* background-color:var(--icyskyblue)*/
+    background-color:royalblue;
+  }
+
+  th {}
   td {}
-    td:nth-child(1) {}
+  td:nth-child(1) {}
   colgroup {}
   data {}
   datalist {}
@@ -267,6 +270,15 @@ nav a:hover {
       display: flex;
       flex-flow:row; 
       align-items: center; 
+      padding: 1%;
+    }
+
+    .MonthSelect{
+      margin: 5px;
+    }
+
+    .YearSelect{
+      margin: 5px;
     }
     
     .AddExpenseRow {  
