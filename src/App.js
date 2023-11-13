@@ -31,7 +31,7 @@ function App() {
                 <Route path="/ExpensePage" element={<ExpensePage setExpense={setExpenseToEdit}/>}/>
                 <Route path="/AddExpensePage" element={<AddExpensePage/>}/>
                 <Route path="/EditExpensePage" element={<EditExpensePage givenExpense = {expense}/>}/>
-                <Route path="/SearchCatPage" element = {<SearchCatPage setExpense={setExpenseToEdit} givenCategory = {cat} />}/>
+                <Route path="/SearchCatPage/:month/:year/:category" element = {<SearchCatPage setExpense={setExpenseToEdit}/>}/>
                 <Route path="/CategoryPage/:month/:year" element = {<CategoryPage setExpense={setExpenseToEdit} />}/>
                 <Route path="/CategoryRow" element ={<CategoryRow setCategory= {setCategoryToSearch} />}/>
                 <Route path="/SearchMonth/:month/:year" element={<SearchMonth setExpense={setExpenseToEdit}/>}/>

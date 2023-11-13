@@ -15,6 +15,8 @@ function HomePage() {
                     <li>REACT: A framework used to build websites in terms of components. It dynamically updates the DOM tree to simulate multiple HTML pages.</li>
                     <li>MongoDB: A document-oriented database program used to store and display user input data.</li>
                     <li>Mongoose: A tool we use to connect our Node server and the MongoDB server.</li>
+                    <li>Heroku</li>
+                    <li>Github Pages</li>
                 </ul>
             </p>
             </article>
