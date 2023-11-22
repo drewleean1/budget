@@ -2,12 +2,14 @@ import React, { useState, useEffect } from "react";
 import { HashRouter, Routes, Route } from 'react-router-dom';
 
 import Nav from './components/Nav.js';
-import HomePage from './pages/HomePage.js';
+import About from './pages/AboutPage.js';
 import ExpensePage from './pages/ExpensePage.js';
 import AddExpensePage from './pages/AddExpensePage.js';
 import EditExpensePage from './pages/EditExpensePage.js';
 import SearchCatPage from './pages/SearchCatPage.js';
 import CategoryPage from "./pages/CategoryPage.js";
+import HomePage from "./pages/HomePage.js";
+
 import CategoryRow from "./components/CategoryRow.js";
 import MonthYear from "./components/MonthYear.js";
 import SearchMonth from "./pages/SearchMonth.js";
@@ -27,8 +29,9 @@ function App() {
 
         <main>
             <Routes>
-                <Route path="/" element={<HomePage />} />
+                <Route path="/" element= {<HomePage/>}/> 
                 <Route path="/ExpensePage" element={<ExpensePage setExpense={setExpenseToEdit}/>}/>
+                <Route path="/AboutPage" element={<About />}/>
                 <Route path="/AddExpensePage" element={<AddExpensePage/>}/>
                 <Route path="/EditExpensePage" element={<EditExpensePage givenExpense = {expense}/>}/>
                 <Route path="/SearchCatPage/:month/:year/:category" element = {<SearchCatPage setExpense={setExpenseToEdit}/>}/>
