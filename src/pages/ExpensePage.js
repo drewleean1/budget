@@ -6,6 +6,7 @@ import MonthYear from "../components/MonthYear";
 import ExpenseLog from '../components/ExpenseLog';
 import AddExpenseRow from '../components/AddExpenseRow';
 import ExpenseNav from "../components/ExpenseNav";
+import LoginButton from "../components/LoginButton";
 
 const ExpensePage = ({setExpense}) => {
 
@@ -83,6 +84,7 @@ const ExpensePage = ({setExpense}) => {
             </>
         );
     }
+
     else {
         return(
             <>
