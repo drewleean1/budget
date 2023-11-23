@@ -3,6 +3,7 @@ import {useNavigate} from 'react-router-dom';
 
 function EditExpensePage ({givenExpense}) {
 
+    
     const [date, setDate]           = useState(givenExpense.date); 
     const [item, setItem]           = useState(givenExpense.item);
     const [amount, setAmount]       = useState(givenExpense.amount); 

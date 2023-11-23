@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
+import { useAuth0 } from "@auth0/auth0-react";
 
 import MonthYear from "../components/MonthYear";
 import ExpenseLog from '../components/ExpenseLog';
 import AddExpenseRow from '../components/AddExpenseRow';
 import ExpenseNav from "../components/ExpenseNav";
 
-
 const ExpensePage = ({setExpense}) => {
+
+    const { user, isAuthenticated, isLoading } = useAuth0();
 
     let today = new Date(); 
     let month = today.getMonth()+1; 
@@ -15,6 +17,8 @@ const ExpensePage = ({setExpense}) => {
 
     const months = [ '',"January", "February", "March", "April", "May", "June", 
            "July", "August", "September", "October", "November", "December" ];
+
+    
 
     let currentMonth = months[month];
     
@@ -53,7 +57,10 @@ const ExpensePage = ({setExpense}) => {
     }, []);
 
     return (
+        isAuthenticated && (
         <>
+
+        
             <ExpenseNav/>
 
             <article>
@@ -73,7 +80,8 @@ const ExpensePage = ({setExpense}) => {
                 onDelete={onDeleteExpense} 
             />  
             </article>
-        </>
+        </>)
+
     );
 }
 
