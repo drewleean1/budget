@@ -29,8 +29,7 @@ function App() {
 
         <main>
             <Routes>
-                <Route path="/" element= {<HomePage/>}/> 
-                <Route path="/ExpensePage" element={<ExpensePage setExpense={setExpenseToEdit}/>}/>
+                <Route path="/" element={<ExpensePage setExpense={setExpenseToEdit}/>}/>
                 <Route path="/AboutPage" element={<About />}/>
                 <Route path="/AddExpensePage" element={<AddExpensePage/>}/>
                 <Route path="/EditExpensePage" element={<EditExpensePage givenExpense = {expense}/>}/>

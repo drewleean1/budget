@@ -54,35 +54,43 @@ const ExpensePage = ({setExpense}) => {
 
     useEffect(() => {
         loadExpenses();
+        console.log(user);
     }, []);
 
-    return (
-        isAuthenticated && (
-        <>
+    if (isAuthenticated) {
+        return (
+            <>
+                
+                <ExpenseNav/>
 
-        
-            <ExpenseNav/>
+                <article>
+                <div className="ExpenseHeader">
+                    <h3>Add an expense:</h3>
+                    <AddExpenseRow/>
+                </div>
 
-            <article>
-            <div className="ExpenseHeader">
-                <h3>Add an expense:</h3>
-                <AddExpenseRow/>
-            </div>
+                <div className = "ExpenseHeader">
+                    <h3>{currentMonth} {year}</h3>
+                    <MonthYear />
+                </div>
 
-            <div className = "ExpenseHeader">
-                <h3>{currentMonth} {year}</h3>
-                <MonthYear />
-            </div>
-
-            <ExpenseLog 
-                expenses={expenses} 
-                onEdit={onEditExpense} 
-                onDelete={onDeleteExpense} 
-            />  
-            </article>
-        </>)
-
-    );
+                <ExpenseLog 
+                    expenses={expenses} 
+                    onEdit={onEditExpense} 
+                    onDelete={onDeleteExpense} 
+                />  
+                </article>
+            </>
+        );
+    }
+    else {
+        return(
+            <>
+            <h2>Keep track of your expenses with this REACT app</h2>
+                <LoginButton/>
+            </>
+        );
+    }
 }
 
 export default ExpensePage;
