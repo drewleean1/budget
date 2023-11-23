@@ -10,7 +10,7 @@ root.render(
     domain="dev-rswsnui2z8an8oex.us.auth0.com"
     clientId="ZGIf9dZmLAxD2gmPXhMvbcTbADQJwlU1"
     authorizationParams={{
-      redirect_uri: "https://drewleean1.github.io/budget/#/ExpensePage"
+      redirect_uri: "https://drewleean1.github.io/budget/#/"
     }}
   >
     <App />
