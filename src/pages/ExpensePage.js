@@ -7,6 +7,7 @@ import ExpenseLog from '../components/ExpenseLog';
 import AddExpenseRow from '../components/AddExpenseRow';
 import ExpenseNav from "../components/ExpenseNav";
 import LoginButton from "../components/LoginButton";
+import CreateNewUser from "../components/CreateNewuser";
 
 const ExpensePage = ({setExpense}) => {
 
@@ -61,6 +62,7 @@ const ExpensePage = ({setExpense}) => {
                 <ExpenseNav/>
 
                 <article>
+                <CreateNewUser />
                 <div className="ExpenseHeader">
                     <h3>Add an expense:</h3>
                     <AddExpenseRow/>
