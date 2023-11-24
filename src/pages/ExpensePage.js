@@ -51,8 +51,13 @@ const ExpensePage = ({setExpense}) => {
     }
 
     const isNewUser = async user => {
-        const response = await fetch(`localhost:3000/users/${user.email}`)
-        console.log(response); 
+        const response = await fetch(`http://localhost:3000/users/${user.email}`)
+        if (response.status === 204) {
+            console.log('works!')
+        }
+        else {
+            console.error(`Unable to find user`)
+        }}
     } 
 
     useEffect(() => {

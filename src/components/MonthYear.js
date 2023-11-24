@@ -10,8 +10,6 @@ const MonthYear = () => {
   const [month, setMonth] = useState(today.getMonth());
   const [year, setYear] = useState(today.getFullYear());
 
-  console.log(year);
-
   const onSearchDate = async () => {
     console.log(month, year);
     pivot(`/SearchMonth/${month}/${year}`);
