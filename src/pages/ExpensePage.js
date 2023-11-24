@@ -51,7 +51,7 @@ const ExpensePage = ({setExpense}) => {
     }
 
     const isNewUser = async user => {
-        const response = await fetch(`localhost:3000/users/${user.user_id}`)
+        const response = await fetch(`localhost:3000/users/${user.email}`)
         console.log(response); 
     } 
 
