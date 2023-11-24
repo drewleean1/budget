@@ -61,9 +61,7 @@ const ExpensePage = ({setExpense}) => {
 
     if (isAuthenticated) {
 
-        useEffect(() => {
-            isNewUser(user);
-        }, []);
+        isNewUser(user);
 
         return (
             <>
