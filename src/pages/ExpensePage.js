@@ -55,7 +55,7 @@ const ExpensePage = ({setExpense}) => {
 
     useEffect(() => {
         loadExpenses();
-        console.log(user);
+        console.log(user.json());
     }, []);
 
     if (isAuthenticated) {
