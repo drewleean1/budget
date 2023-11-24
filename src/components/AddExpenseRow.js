@@ -20,7 +20,7 @@ function AddExpenseRow ({expense, onEdit, onDelete}) {
     const addExpense = async() => {
         const newExpense = {date, item, amount, category, method, email, user_id}; 
         //const response = await fetch('https://budget-drewleean-80248645fdf0.herokuapp.com/expenses', {
-        const response = await fetch('localhost:3000/expenses', {
+        const response = await fetch('localhost:3000/users', {
             method: 'post', 
             body: JSON.stringify(newExpense), 
             headers: {
