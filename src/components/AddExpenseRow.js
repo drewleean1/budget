@@ -13,7 +13,7 @@ function AddExpenseRow ({expense, onEdit, onDelete}) {
     const { user, isAuthenticated, isLoading } = useAuth0();
 
     const email = user.email; 
-    const user_id = user.user_id; 
+    const user_id = user.sub; 
 
     const pivot = useNavigate();
     
