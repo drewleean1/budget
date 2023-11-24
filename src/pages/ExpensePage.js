@@ -66,8 +66,6 @@ const ExpensePage = ({setExpense}) => {
 
     if (isAuthenticated) {
 
-        isNewUser(user);
-
         return (
             <>
                 <ExpenseNav/>
