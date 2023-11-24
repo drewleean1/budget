@@ -19,8 +19,6 @@ const ExpensePage = ({setExpense}) => {
     const months = [ '',"January", "February", "March", "April", "May", "June", 
            "July", "August", "September", "October", "November", "December" ];
 
-    
-
     let currentMonth = months[month];
     
     const pivot = useNavigate();
@@ -28,7 +26,6 @@ const ExpensePage = ({setExpense}) => {
     const [expenses, setExpenses] = useState([]); 
 
     const loadExpenses = async () => {
-        console.log(month, year)
         const response = await fetch(`https://budget-drewleean-80248645fdf0.herokuapp.com/expenses/month/${month}/year/${year}`);
         const expenses = await response.json(); 
         setExpenses(expenses);
@@ -53,14 +50,23 @@ const ExpensePage = ({setExpense}) => {
         else {}
     }
 
+    const isNewUser = async user => {
+        const response = await fetch(`localhost:3000/users/${user.user_id}`)
+        console.log(response); 
+    } 
+
     useEffect(() => {
         loadExpenses();
         }, []);
 
     if (isAuthenticated) {
+
+        useEffect(() => {
+            isNewUser(user);
+        }, []);
+
         return (
             <>
-                
                 <ExpenseNav/>
 
                 <article>
