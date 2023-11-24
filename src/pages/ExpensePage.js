@@ -52,39 +52,14 @@ const ExpensePage = ({setExpense}) => {
             }}
         else {}
     }
-
-    const checkIfNewUser = async email  => {
-        const newUser = {email, user_id}; 
-
-        const response = await fetch(`http://localhost:3000/users/${email}`, { method: 'get' });
-            if (response.status === 404) {
-                const create = await fetch('http://localhost:3000/users', {
-                method: 'post', 
-                body: JSON.stringify(newUser), 
-                headers: {'Content-Type': 'application/json'},
-                });
-                if (response.status === 201) {
-                    alert('Expense successfully logged');
-                    window.location.reload();
-                } 
-                else {
-                    alert(`We were unable to log your expense: status code = ${response.status}`);  
-                    window.location.reload();
-                }}
-
-            else {
-                console.error(`Already a user`)
-            }}
-    }
-
+    
     useEffect(() => {
         loadExpenses();
         }, []);
 
     if (isAuthenticated) {
-
         return (
-            <>
+            <>                
                 <ExpenseNav/>
 
                 <article>
