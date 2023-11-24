@@ -10,15 +10,12 @@ function AddExpenseRow ({expense, onEdit, onDelete}) {
     const [category, setCategory]   = useState(''); 
     const [method, setMethod]       = useState('');
 
-    const [ user, isAuthenticated, isLoading ]= useAuth0();
 
-    const user_id = user.user_id; 
-    const email = user.email; 
 
     const pivot = useNavigate();
     
     const addExpense = async() => {
-        const newExpense = {date, item, amount, category, method, email, user_id}; 
+        const newExpense = {date, item, amount, category, method}; 
         //const response = await fetch('https://budget-drewleean-80248645fdf0.herokuapp.com/expenses', {
         const response = await fetch('localhost:3000/expenses', {
             method: 'post', 
