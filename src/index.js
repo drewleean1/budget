@@ -12,6 +12,9 @@ root.render(
     authorizationParams={{
       redirect_uri: "https://drewleean1.github.io/budget/#/"
     }}
+    useRefreshTokens={true}
+    cacheLocation="localstorage"
+  
   >
     <App />
   </Auth0Provider>,
