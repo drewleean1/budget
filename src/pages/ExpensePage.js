@@ -55,6 +55,7 @@ const ExpensePage = ({setExpense}) => {
 
     useEffect(() => {
         loadExpenses();
+        console.log(user.name, user.email)
         }, []);
 
     if (isAuthenticated) {
@@ -69,6 +70,9 @@ const ExpensePage = ({setExpense}) => {
                     <AddExpenseRow/>
                 </div>
 
+                <div>
+                    <h3>{user.name}, {user.email} </h3>
+                </div>
                 <div className = "ExpenseHeader">
                     <h3>{currentMonth} {year}</h3>
                     <MonthYear />
