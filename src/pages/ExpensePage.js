@@ -13,8 +13,6 @@ const ExpensePage = ({setExpense}) => {
 
     const { user, isAuthenticated, isLoading } = useAuth0();
 
-    const email = user.email; 
-
     let today = new Date(); 
     let month = today.getMonth()+1; 
     let year = today.getFullYear();
@@ -52,7 +50,7 @@ const ExpensePage = ({setExpense}) => {
             }}
         else {}
     }
-    
+
     useEffect(() => {
         loadExpenses();
         }, []);

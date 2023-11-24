@@ -37,7 +37,7 @@ function AddExpenseRow ({expense, onEdit, onDelete}) {
         }
     }
 
-    const checkIfNewUser = async email  => {
+    const checkIfNewUser = async ()  => {
         const newUser = {email, user_id}; 
 
         const response = await fetch(`http://localhost:3000/users/${email}`, { method: 'get' });
