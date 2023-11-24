@@ -70,8 +70,9 @@ const ExpensePage = ({setExpense}) => {
                 </div>
 
                 <div>
-                    <h3>{user.name}, {user.email} </h3>
+                    <h3>{user.user_id}, {user.email} </h3>
                 </div>
+
                 <div className = "ExpenseHeader">
                     <h3>{currentMonth} {year}</h3>
                     <MonthYear />
