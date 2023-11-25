@@ -49,7 +49,7 @@ function AddExpenseRow ({expense, onEdit, onDelete}) {
             },
         });
         if (response.status === 201) {
-            console.log(res.json())
+            console.log('good');
         } 
         else {
             console.log(`We were unable to log your expense: status code = ${response.status}`);  
