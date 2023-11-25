@@ -13,6 +13,8 @@ const ExpensePage = ({setExpense}) => {
 
     const { user, isAuthenticated, isLoading } = useAuth0();
 
+    const email = user.email; 
+
     let today = new Date(); 
     let month = today.getMonth()+1; 
     let year = today.getFullYear();
@@ -27,7 +29,13 @@ const ExpensePage = ({setExpense}) => {
     const [expenses, setExpenses] = useState([]); 
 
     const loadExpenses = async () => {
-        const response = await fetch(`https://budget-drewleean-80248645fdf0.herokuapp.com/expenses/month/${month}/year/${year}`);
+        const expenseToLoad = {email, month, year};
+        const response = await fetch(`https://localhost:3000/expenses/currentMonth`, {
+            method: 'post', 
+            body: JSON.stringify(expenseToLoad), 
+            headers: {'Content-Type': 'application/json',},
+
+        });
         const expenses = await response.json(); 
         setExpenses(expenses);
     }
