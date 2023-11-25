@@ -29,7 +29,7 @@ const ExpensePage = ({setExpense}) => {
     const loadExpenses = async () => {
         const email = user.email; 
         const expenseToLoad = {email, month, year};
-        const response = await fetch(`https://localhost:3000/expenses/currentMonth`, {
+        const response = await fetch(`http://localhost:3000/expenses/currentMonth`, {
             method: 'post', 
             body: JSON.stringify(expenseToLoad), 
             headers: {'Content-Type': 'application/json',},
