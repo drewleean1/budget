@@ -13,7 +13,6 @@ const MonthYear = () => {
   const onSearchDate = async () => {
     console.log(month, year);
     pivot(`/SearchMonth/${month}/${year}`);
-    window.location.reload();
     }
 
   return (
