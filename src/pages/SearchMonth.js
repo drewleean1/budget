@@ -3,9 +3,10 @@ import {useNavigate, useParams} from 'react-router-dom';
 import MonthYear from '../components/MonthYear';
 import ExpenseNav from '../components/ExpenseNav';
 import ExpenseLog from '../components/ExpenseLog';
-const { user, isAuthenticated, isLoading } = useAuth0();
+import { useAuth0 } from "@auth0/auth0-react";
 
 const SearchMonth = ({setExpense}) => {
+    const { user, isAuthenticated, isLoading } = useAuth0();
 
     const months = [ '',"January", "February", "March", "April", "May", "June", 
            "July", "August", "September", "October", "November", "December" ]; 

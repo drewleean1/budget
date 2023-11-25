@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from 'react-router-dom';
 import { useAuth0 } from "@auth0/auth0-react";
 
-
 import CategoryLog from "../components/CategoryLog";
 import ExpenseNav from "../components/ExpenseNav";
 import CategoryMonthYear from "../components/CategoryMonthYear";
@@ -23,7 +22,7 @@ const CategoryPage = () => {
 
     const loadExpenses = async () => {
         const email = user.email; 
-        const searchCatMonth = {email, category, month, year}
+        const searchCatMonth = {email, month, year}
         const response = await fetch(`http://localhost:3000/expenses/searchCatMonth`, {
             method: 'post', 
             body: JSON.stringify(searchCatMonth), 
