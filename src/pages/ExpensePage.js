@@ -13,8 +13,6 @@ const ExpensePage = ({setExpense}) => {
 
     const { user, isAuthenticated, isLoading } = useAuth0();
 
-    const email = user.email; 
-
     let today = new Date(); 
     let month = today.getMonth()+1; 
     let year = today.getFullYear();
@@ -29,6 +27,7 @@ const ExpensePage = ({setExpense}) => {
     const [expenses, setExpenses] = useState([]); 
 
     const loadExpenses = async () => {
+        const email = user.email; 
         const expenseToLoad = {email, month, year};
         const response = await fetch(`https://localhost:3000/expenses/currentMonth`, {
             method: 'post', 
