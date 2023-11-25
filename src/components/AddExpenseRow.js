@@ -42,7 +42,7 @@ function AddExpenseRow ({expense, onEdit, onDelete}) {
         const newUser = {email, user_id}; 
 
         const response = await fetch('http://localhost:3000/users', {
-            method: 'get', 
+            method: 'post', 
             body: JSON.stringify(newUser), 
             headers: {
                 'Content-Type': 'application/json',
