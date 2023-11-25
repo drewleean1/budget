@@ -23,7 +23,7 @@ const CategoryPage = () => {
     const loadExpenses = async () => {
         const email = user.email; 
         const searchCatMonth = {email, month, year}
-        const response = await fetch(`http://localhost:3000/expenses/searchCatMonth`, {
+        const response = await fetch(`http://localhost:3000/expenses/currentMonth`, {
             method: 'post', 
             body: JSON.stringify(searchCatMonth), 
             headers: {'Content-Type': 'application/json',},

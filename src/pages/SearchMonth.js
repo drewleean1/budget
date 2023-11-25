@@ -49,11 +49,16 @@ const SearchMonth = ({setExpense}) => {
     }
 
     useEffect(() => {
-        loadExpenses();
+        console.log (user.email)
+        //loadExpenses();
     }, []);
+    
 
+    if (isAuthenticated){
+    loadExpenses();
 
     return (
+
         <>
         <ExpenseNav/>
         <article> 
@@ -68,7 +73,8 @@ const SearchMonth = ({setExpense}) => {
             />
         </article>
         </>
-    )
+    )}
+
 
 }
 
