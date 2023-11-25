@@ -52,7 +52,9 @@ const ExpensePage = ({setExpense}) => {
     }
 
     useEffect(() => {
-        loadExpenses();
+        if (isAuthenticated) {
+            loadExpenses();
+        }
         }, []);
 
     if (isAuthenticated) {

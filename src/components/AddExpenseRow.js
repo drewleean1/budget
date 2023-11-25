@@ -48,8 +48,6 @@ function AddExpenseRow ({expense, onEdit, onDelete}) {
                         id = "date"
                         required
                         />
-
-                    
                     <label htmlFor="item"></label>
                     <input
                         type="text"
