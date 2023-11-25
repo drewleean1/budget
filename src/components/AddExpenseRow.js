@@ -27,6 +27,7 @@ function AddExpenseRow ({expense, onEdit, onDelete}) {
                 'Content-Type': 'application/json',
             },
         });
+
         if (response.status === 201) {
             alert('Expense successfully logged');
             window.location.reload();
@@ -52,7 +53,7 @@ function AddExpenseRow ({expense, onEdit, onDelete}) {
         } 
         else {
             console.log(`We were unable to log your expense: status code = ${response.status}`);  
-        }
+        }}
     
     const onAdd = async() => {
         checkIfNewUser();
@@ -116,4 +117,4 @@ function AddExpenseRow ({expense, onEdit, onDelete}) {
     );
 }
 
-export default AddExpenseRow; 
+export default AddExpenseRow;
