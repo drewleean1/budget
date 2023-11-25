@@ -21,7 +21,7 @@ function AddExpenseRow ({expense, onEdit, onDelete}) {
         const newExpense = {date, item, amount, category, method, email}; 
         //const response = await fetch('https://budget-drewleean-80248645fdf0.herokuapp.com/expenses', {
         const response = await fetch('http://localhost:3000/expenses', {
-            method: 'put', 
+            method: 'post', 
             body: JSON.stringify(newExpense), 
             headers: {
                 'Content-Type': 'application/json',
@@ -37,29 +37,6 @@ function AddExpenseRow ({expense, onEdit, onDelete}) {
             window.location.reload();
         }
     }
-
-    const checkIfNewUser = async ()  => {
-        const newUser = {email, user_id}; 
-
-        const response = await fetch('http://localhost:3000/users', {
-            method: 'post', 
-            body: JSON.stringify(newUser), 
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        });
-        if (response.status === 201) {
-            console.log('good');
-        } 
-        else {
-            console.log(`We were unable to log your expense: status code = ${response.status}`);  
-        }}
-    
-    const onAdd = async() => {
-        checkIfNewUser();
-        addExpense();
-    }
-
 
     return (
             <form className ='AddExpenseRow' onSubmit={(e) => {e.preventDefault();}}>
@@ -109,7 +86,7 @@ function AddExpenseRow ({expense, onEdit, onDelete}) {
                     <label htmlFor="submit">
                     <button
                         type="submit"
-                        onClick={onAdd}
+                        onClick={addExpense()}
                         id="submit"
                     >Add</button></label>
 

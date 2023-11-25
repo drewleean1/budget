@@ -61,14 +61,9 @@ const ExpensePage = ({setExpense}) => {
                 <ExpenseNav/>
 
                 <article>
-                <CreateNewUser />
                 <div className="ExpenseHeader">
                     <h3>Add an expense:</h3>
                     <AddExpenseRow/>
-                </div>
-
-                <div>
-                    <h3>{user.user_id}, {user.sub}, {user.email} </h3>
                 </div>
 
                 <div className = "ExpenseHeader">
