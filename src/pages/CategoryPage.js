@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from 'react-router-dom';
-const { user, isAuthenticated, isLoading } = useAuth0();
+import { useAuth0 } from "@auth0/auth0-react";
+
 
 import CategoryLog from "../components/CategoryLog";
 import ExpenseNav from "../components/ExpenseNav";
 import CategoryMonthYear from "../components/CategoryMonthYear";
 
 const CategoryPage = () => {
+    const { user, isAuthenticated, isLoading } = useAuth0();
 
     const months = [ '',"January", "February", "March", "April", "May", "June", 
            "July", "August", "September", "October", "November", "December" ];
