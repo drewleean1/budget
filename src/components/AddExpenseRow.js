@@ -86,7 +86,7 @@ function AddExpenseRow ({expense, onEdit, onDelete}) {
                     <label htmlFor="submit">
                     <button
                         type="submit"
-                        onClick={addExpense()}
+                        onClick={addExpense}
                         id="submit"
                     >Add</button></label>
 
