@@ -1,14 +1,18 @@
 import {React, useState} from 'react'; 
 import {useNavigate} from 'react-router-dom';
+import { useAuth0 } from "@auth0/auth0-react";
 
 function EditExpensePage ({givenExpense}) {
 
-    
     const [date, setDate]           = useState(givenExpense.date); 
     const [item, setItem]           = useState(givenExpense.item);
     const [amount, setAmount]       = useState(givenExpense.amount); 
     const [category, setCategory]   = useState(givenExpense.category); 
     const [method, setMethod]       = useState(givenExpense.method);
+
+    const { user, isAuthenticated, isLoading } = useAuth0();
+
+    const email = user.email; 
 
     const pivot = useNavigate();
     
@@ -20,7 +24,8 @@ function EditExpensePage ({givenExpense}) {
                 item: item, 
                 amount: amount, 
                 category: category, 
-                method: method
+                method: method,
+                email: email
             }), 
             headers: {
                 'Content-Type': 'application/json',

@@ -7,7 +7,6 @@ import ExpenseLog from '../components/ExpenseLog';
 import AddExpenseRow from '../components/AddExpenseRow';
 import ExpenseNav from "../components/ExpenseNav";
 import LoginButton from "../components/LoginButton";
-import CreateNewUser from "../components/CreateNewuser";
 
 const ExpensePage = ({setExpense}) => {
 

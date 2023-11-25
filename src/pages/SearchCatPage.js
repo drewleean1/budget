@@ -3,9 +3,11 @@ import {useNavigate, useParams} from 'react-router-dom';
 import SearchCatMY from '../components/SearchCatMY';
 import ExpenseLog from '../components/ExpenseLog';
 import ExpenseNav from "../components/ExpenseNav";
-
+import { useAuth0 } from "@auth0/auth0-react";
 
 const SearchCatPage = ({setExpense}) => {
+
+    const { user, isAuthenticated, isLoading } = useAuth0();
 
     const months = [ '',"January", "February", "March", "April", "May", "June", 
            "July", "August", "September", "October", "November", "December" ];
@@ -19,7 +21,14 @@ const SearchCatPage = ({setExpense}) => {
     let headerMonth = months[month];
 
     const loadExpenses = async () => {
-        const response = await fetch(`https://budget-drewleean-80248645fdf0.herokuapp.com/expenses/category/${category}/month/${month}/year/${year}`);
+        const email = user.email; 
+        const searchCatMonth = {email, category, month, year}
+        const response = await fetch(`http://localhost:3000/expenses/searchCatMonth`, {
+            method: 'post', 
+            body: JSON.stringify(searchCatMonth), 
+            headers: {'Content-Type': 'application/json',},
+
+        });
         const expenses = await response.json(); 
         setExpenses(expenses);
     }
