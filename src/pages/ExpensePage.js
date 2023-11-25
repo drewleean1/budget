@@ -51,13 +51,12 @@ const ExpensePage = ({setExpense}) => {
         else {}
     }
 
-    useEffect(() => {
-        if (isAuthenticated) {
-            loadExpenses();
-        }
-        }, []);
+    //useEffect(() => {
+    //    loadExpenses();
+    //    }, []);
 
     if (isAuthenticated) {
+        loadExpenses();
         return (
             <>                
                 <ExpenseNav/>
