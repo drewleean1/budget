@@ -32,7 +32,6 @@ const ExpensePage = ({setExpense}) => {
             method: 'post', 
             body: JSON.stringify(expenseToLoad), 
             headers: {'Content-Type': 'application/json',},
-
         });
         const expenses = await response.json(); 
         setExpenses(expenses);

@@ -19,12 +19,12 @@ const SearchMonth = ({setExpense}) => {
     let headerMonth = months[month];
 
     const loadExpenses = async () => {
+        const email = user.email; 
         const monthToSearch = {email, month, year};
         const response = await fetch(`http://localhost:3000/expenses/currentMonth`, {
             method: 'post', 
             body: JSON.stringify(monthToSearch), 
             headers: {'Content-Type': 'application/json',},
-
         });
         const expenses = await response.json(); 
         setExpenses(expenses);

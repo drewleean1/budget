@@ -8,7 +8,6 @@ import AddExpensePage from './pages/AddExpensePage.js';
 import EditExpensePage from './pages/EditExpensePage.js';
 import SearchCatPage from './pages/SearchCatPage.js';
 import CategoryPage from "./pages/CategoryPage.js";
-import HomePage from "./pages/HomePage.js";
 
 import CategoryRow from "./components/CategoryRow.js";
 import MonthYear from "./components/MonthYear.js";
