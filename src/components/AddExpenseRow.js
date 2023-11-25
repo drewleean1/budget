@@ -40,25 +40,19 @@ function AddExpenseRow ({expense, onEdit, onDelete}) {
     const checkIfNewUser = async ()  => {
         const newUser = {email, user_id}; 
 
-        const response = await fetch(`http://localhost:3000/users/${email}`, { method: 'get' });
-            if (response.status === 404) {
-                const create = await fetch('http://localhost:3000/users', {
-                method: 'post', 
-                body: JSON.stringify(newUser), 
-                headers: {'Content-Type': 'application/json'},
-                });
-                if (response.status === 201) {
-                    alert('Expense successfully logged');
-                    window.location.reload();
-                } 
-                else {
-                    alert(`We were unable to log your expense: status code = ${response.status}`);  
-                    window.location.reload();
-                }}
-
-            else {
-                console.error(`Already a user`)
-            }}
+        const response = await fetch('http://localhost:3000/users', {
+            method: 'get', 
+            body: JSON.stringify(newUser), 
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+        if (response.status === 201) {
+            console.log(res.json())
+        } 
+        else {
+            console.log(`We were unable to log your expense: status code = ${response.status}`);  
+        }
     
     const onAdd = async() => {
         checkIfNewUser();
