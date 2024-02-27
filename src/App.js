@@ -40,7 +40,7 @@ function App() {
         </main>
         
         <footer>
-          <p><cite>&copy; Andrew Lee 2023</cite></p>
+          <p><cite>&copy; Andrew Lee 2024</cite></p>
         </footer>
         
         </HashRouter>

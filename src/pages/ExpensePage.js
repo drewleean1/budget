@@ -1,16 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
-import { useAuth0 } from "@auth0/auth0-react";
 
 import MonthYear from "../components/MonthYear";
 import ExpenseLog from '../components/ExpenseLog';
 import AddExpenseRow from '../components/AddExpenseRow';
 import ExpenseNav from "../components/ExpenseNav";
-import LoginButton from "../components/LoginButton";
 
 const ExpensePage = ({setExpense}) => {
-
-    const { user, isAuthenticated, isLoading } = useAuth0();
 
     let today = new Date(); 
     let month = today.getMonth()+1; 
@@ -26,16 +22,12 @@ const ExpensePage = ({setExpense}) => {
     const [expenses, setExpenses] = useState([]); 
 
     const loadExpenses = async () => {
-        const email = user.email; 
-        const expenseToLoad = {email, month, year};
-        const response = await fetch(`http://localhost:3000/expenses/currentMonth`, {
-            method: 'post', 
-            body: JSON.stringify(expenseToLoad), 
-            headers: {'Content-Type': 'application/json',},
-        });
+        console.log(month, year)
+        const response = await fetch(`https://budget-drewleean-80248645fdf0.herokuapp.com/expenses/month/${month}/year/${year}`);
         const expenses = await response.json(); 
         setExpenses(expenses);
     }
+
 
     const onEditExpense = async expense => {
         setExpense(expense); 
@@ -56,45 +48,34 @@ const ExpensePage = ({setExpense}) => {
         else {}
     }
 
-    //useEffect(() => {
-    //    loadExpenses();
-    //    }, []);
-
-    if (isAuthenticated) {
+    useEffect(() => {
         loadExpenses();
-        return (
-            <>                
-                <ExpenseNav/>
+        }, []);
 
-                <article>
-                <div className="ExpenseHeader">
-                    <h3>Add an expense:</h3>
-                    <AddExpenseRow/>
-                </div>
+    return (
+        <>                
+            <ExpenseNav/>
 
-                <div className = "ExpenseHeader">
-                    <h3>{currentMonth} {year}</h3>
-                    <MonthYear />
-                </div>
+            <article>
+            <div className="ExpenseHeader">
+                <h3>Add an expense:</h3>
+                <AddExpenseRow/>
+            </div>
 
-                <ExpenseLog 
-                    expenses={expenses} 
-                    onEdit={onEditExpense} 
-                    onDelete={onDeleteExpense} 
-                />  
-                </article>
-            </>
-        );
-    }
+            <div className = "ExpenseHeader">
+                <h3>{currentMonth} {year}</h3>
+                <MonthYear />
+            </div>
 
-    else {
-        return(
-            <>
-            <h2>Keep track of your expenses with this REACT app</h2>
-                <LoginButton/>
-            </>
-        );
-    }
+            <ExpenseLog 
+                expenses={expenses} 
+                onEdit={onEditExpense} 
+                onDelete={onDeleteExpense} 
+            />  
+            </article>
+        </>
+    );
 }
+
 
 export default ExpensePage;

@@ -11,7 +11,6 @@ function ExpenseNav() {
         <Link to='../CategoryPage/11/2023'>Categories</Link>
         <Link to="../SearchCatPage/11/2023/Travel">Search Category</Link>
       </nav>         
-      <LogoutButton />
     </div>
   );
 }
