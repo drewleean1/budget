@@ -12,6 +12,7 @@ import CategoryPage from "./pages/CategoryPage.js";
 import CategoryRow from "./components/CategoryRow.js";
 import MonthYear from "./components/MonthYear.js";
 import SearchMonth from "./pages/SearchMonth.js";
+import BarGraphPage from "./pages/BarGraphPage.js";
 
 import './App.css';
 
@@ -36,6 +37,7 @@ function App() {
                 <Route path="/CategoryPage/:month/:year" element = {<CategoryPage setExpense={setExpenseToEdit} />}/>
                 <Route path="/CategoryRow" element ={<CategoryRow setCategory= {setCategoryToSearch} />}/>
                 <Route path="/SearchMonth/:month/:year" element={<SearchMonth setExpense={setExpenseToEdit}/>}/>
+                <Route path="/BarGraph/" element ={<BarGraphPage />} />
             </Routes>
         </main>
         
