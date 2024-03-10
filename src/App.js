@@ -37,7 +37,7 @@ function App() {
                 <Route path="/CategoryPage/:month/:year" element = {<CategoryPage setExpense={setExpenseToEdit} />}/>
                 <Route path="/CategoryRow" element ={<CategoryRow setCategory= {setCategoryToSearch} />}/>
                 <Route path="/SearchMonth/:month/:year" element={<SearchMonth setExpense={setExpenseToEdit}/>}/>
-                <Route path="/BarGraph/" element ={<BarGraphPage />} />
+                <Route path="/BarGraph/:year" element ={<BarGraphPage />} />
             </Routes>
         </main>
         

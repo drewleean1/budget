@@ -337,6 +337,24 @@ nav a:hover {
     padding: 1%;
     margin: 2%;
   }
+
+  .iFrame {
+    display:flex;
+  }
+
+  .frame {
+    width: 400%;
+    border: 0;
+    -ms-transform: scale(1);
+    -moz-transform: scale(01);
+    -o-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -ms-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -o-transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;  }
   
   /*  ----- Classes for alignment, positioning, widths, grids, embellishments, and animation ----- */
   .image-gallery-image{

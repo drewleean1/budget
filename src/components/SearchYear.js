@@ -5,10 +5,11 @@ const SearchYear = () => {
 
   const pivot = useNavigate();
 
-  const [year, setYear] = useState(2024);
+  const [year, setYear] = useState();
 
   const onSearchDate = async () => {
-    pivot(`/BarGraph//${year}`);
+    pivot(`/BarGraph/${year}`);
+    console.log(year);
     window.location.reload();
   }
 
