@@ -8,7 +8,7 @@ function ExpenseNav() {
     <div className="" >
       <nav className="ExpenseNav">
         <Link to="../">Expense</Link>
-        <Link to='../CategoryPage/11/2023'>Categories</Link>
+        <Link to='../CategoryPage/3/2024'>Categories</Link>
         <Link to="../SearchCatPage/11/2023/Travel">Search Category</Link>
         <Link to="../BarGraph/2024">Bar Graph</Link>
       </nav>         
