@@ -5,7 +5,7 @@ import LogoutButton from './LogoutButton';
 function ExpenseNav() {
   
   return (
-    <div className="ExpenseHeader" >
+    <div className="" >
       <nav className="ExpenseNav">
         <Link to="../">Expense</Link>
         <Link to='../CategoryPage/11/2023'>Categories</Link>

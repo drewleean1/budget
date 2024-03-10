@@ -65,14 +65,6 @@ function AddExpenseRow ({expense, onEdit, onDelete}) {
                         onChange={e =>setCategory(e.target.value)}
                         id = "category"/>
 
-                    <label htmlFor="method"></label>
-                    <input
-                        type="text"
-                        placeholder="Payment Method"
-                        value={method}
-                        onChange={e =>setMethod(e.target.value)}
-                        id = "method"/>
-
                     <label htmlFor="submit">
                     <button
                         type="submit"

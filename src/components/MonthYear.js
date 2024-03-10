@@ -11,15 +11,16 @@ const MonthYear = () => {
   const [year, setYear] = useState(today.getFullYear());
 
   const onSearchDate = async () => {
-    console.log(month, year);
     pivot(`/SearchMonth/${month}/${year}`);
-    }
+    window.location.reload();
+  }
 
   return (
     <>
       <form className="CustomDate">
       <label>
         <select className="MonthSelect" onChange={e =>setMonth(e.target.value)}>
+            <option value="">Month</option>
             <option value="1">January</option>
             <option value="2">February</option>
             <option value="3">March</option>
@@ -36,8 +37,9 @@ const MonthYear = () => {
       </label>
       <label>
         <select className="YearSelect" onChange={e =>setYear(e.target.value)}>
-            <option value="2023">2023</option>
+            <option value="">Year</option>
             <option value="2024">2024</option>
+            <option value="2023">2023</option>
         </select>
       </label>
       <button

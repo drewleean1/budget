@@ -18,7 +18,7 @@ const SearchMonth = ({setExpense}) => {
     let headerMonth = months[month];
 
     const loadExpenses = async () => {
-        const response = await fetch(`https://budget-drewleean-80248645fdf0.herokuapp.com/${month}/${year}`);
+        const response = await fetch(`https://budget-drewleean-80248645fdf0.herokuapp.com/expenses/month/${month}/year/${year}`);
         const expenses = await response.json(); 
         setExpenses(expenses);
     }

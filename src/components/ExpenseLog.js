@@ -20,7 +20,6 @@ function ExpenseLog({expenses, onDelete, onEdit}) {
                     <th>Expense Name</th>
                     <th>Amount</th>
                     <th>Category</th>
-                    <th>Payment Method</th>
                     <th>Edit</th>
                     <th>Delete</th>
                 </tr>
@@ -38,7 +37,6 @@ function ExpenseLog({expenses, onDelete, onEdit}) {
                     <td>Total</td>
                     <td></td>
                     <td><Summation expenses ={displayExpenses}/></td>
-                    <td></td>
                     <td></td>
                     <td></td>
                     <td></td>

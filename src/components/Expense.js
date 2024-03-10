@@ -17,7 +17,6 @@ function Expense ({expense, onEdit, onDelete}) {
             <td>{expense.item}</td>
             <td>{conPrice}</td>
             <td>{expense.category}</td>
-            <td>{expense.method}</td>
             <td><AiTwotoneEdit onClick = {() => onEdit(expense)} /></td>
             <td><AiFillDelete onClick = {() => onDelete(expense._id)} /></td>
         </tr>
