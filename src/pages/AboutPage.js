@@ -20,7 +20,7 @@ function About() {
                     <li>Heroku</li>
                     <li>Github Pages</li>
                 </ul>
-                <a href= "https://github.com/drewleean1" rel="noreferrer">My github</a>
+                <a className="github" href= "https://github.com/drewleean1" rel="noreferrer">My github</a>
                
             </p>
             </article>

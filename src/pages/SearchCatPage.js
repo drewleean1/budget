@@ -19,7 +19,7 @@ const SearchCatPage = ({setExpense}) => {
 
     const loadExpenses = async () => {
         //const response = await fetch(`/expenses/category/${givenCategory}`);
-        const response = await fetch(`https://budget-drewleean-80248645fdf0.herokuapp.com/expenses/category/${category}/month/7/year/2023`);
+        const response = await fetch(`https://budget-drewleean-80248645fdf0.herokuapp.com/expenses/category/${category}/month/${month}/year/${year}`);
         const expenses = await response.json(); 
         setExpenses(expenses);
     }
