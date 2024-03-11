@@ -7,7 +7,7 @@ function AddExpenseRow ({expense, onEdit, onDelete}) {
     const [item, setItem]           = useState('');
     const [amount, setAmount]       = useState(''); 
     const [category, setCategory]   = useState(''); 
-    const [method, setMethod]       = useState('');
+    const [method, setMethod]       = useState('0');
 
     const pivot = useNavigate();
 
