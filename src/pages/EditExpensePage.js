@@ -1,6 +1,5 @@
 import {React, useState} from 'react'; 
 import {useNavigate} from 'react-router-dom';
-import { useAuth0 } from "@auth0/auth0-react";
 
 function EditExpensePage ({givenExpense}) {
 
@@ -8,11 +7,7 @@ function EditExpensePage ({givenExpense}) {
     const [item, setItem]           = useState(givenExpense.item);
     const [amount, setAmount]       = useState(givenExpense.amount); 
     const [category, setCategory]   = useState(givenExpense.category); 
-    const [method, setMethod]       = useState(givenExpense.method);
-
-    const { user, isAuthenticated, isLoading } = useAuth0();
-
-    const email = user.email; 
+    const [method, setMethod]       = useState("0");
 
     const pivot = useNavigate();
     
@@ -25,7 +20,6 @@ function EditExpensePage ({givenExpense}) {
                 amount: amount, 
                 category: category, 
                 method: method,
-                email: email
             }), 
             headers: {
                 'Content-Type': 'application/json',
@@ -79,14 +73,6 @@ function EditExpensePage ({givenExpense}) {
                         value={category}
                         onChange={e =>setCategory(e.target.value)}
                         id = "category"/>
-
-                    <label htmlFor="method">Payment Method</label>
-                    <input
-                        type="text"
-                        placeholder="Check"
-                        value={method}
-                        onChange={e =>setMethod(e.target.value)}
-                        id = "method"/>
 
                     <label htmlFor="submit">
                     <button
