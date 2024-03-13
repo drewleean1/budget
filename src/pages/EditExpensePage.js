@@ -27,11 +27,11 @@ function EditExpensePage ({givenExpense}) {
         });
         if (response.status === 201) {
             alert('Expense successfully edited');
-            pivot("/ExpensePage");
+            pivot("/");
         } 
         else {
             alert(`We were unable to edit your expense: status code = ${response.status}`); 
-            pivot("/ExpensePage")
+            pivot("/")
         }
     }
 
