@@ -9,8 +9,6 @@ const BarGraphPage = () => {
     
     const{year} = useParams();
 
-    const url = "https://budget-flask-dr-0a0cc3b7e382.herokuapp.com/createBar/" + year 
-
     return (
         <>
         <ExpenseNav/>
@@ -27,6 +25,7 @@ const BarGraphPage = () => {
             title="iFrame Example"
             src= {`https://budget-flask-dr-0a0cc3b7e382.herokuapp.com/createBar/${year}`}
             width= "100%" height = "640"
+            border-width="0"
             >
             </iframe>
         </div>

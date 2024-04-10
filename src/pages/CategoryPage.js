@@ -37,10 +37,19 @@ const CategoryPage = () => {
                 <h3>{headerMonth} {year} spend by category</h3>
                 <CategoryMonthYear />
             </div>
-                <CategoryLog
-                    expenses = {expenses}
-                    givenMonth = {month}
-                    givenYear = {year}/>
+            <div className = "iFrame" text-align="center" border-width="0" >
+                <iframe className="frame"
+                    title="iFrame Example"
+                    src= {`https://budget-flask-dr-0a0cc3b7e382.herokuapp.com/catBar/${month}/${year}`}
+                    width= "100%" height = "640"
+                    border-width="0" 
+                    >
+                </iframe>
+            </div>
+            <CategoryLog
+                expenses = {expenses}
+                givenMonth = {month}
+                givenYear = {year}/>
             </article>
         </>
     );
